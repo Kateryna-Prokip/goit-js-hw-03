@@ -1,7 +1,17 @@
-function checkAccess(subType) {
-  return(subType === "pro" || subType === "vip");
-}
-console.log(checkAccess("pro"));
-console.log(checkAccess("starter"));
-console.log(checkAccess("vip"));
-console.log(checkAccess("free"));
+function filterArray(numbers, value) {
+  let resultfilterArray = [];
+  for (let index = 0; index < numbers.length; index++) {
+    if (numbers[index] > value) {
+      resultfilterArray.push(numbers[index]);
+    }
+  } 
+
+   return resultfilterArray;
+ }
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+
